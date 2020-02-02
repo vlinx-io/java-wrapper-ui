@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.vlinx.java.wrapper.ui.UIController">
+    <top>
+        <Label text="VLINX Java Wrapper" BorderPane.alignment="CENTER">
+            <font>
+                <Font size="26.0" />
+            </font>
+            <BorderPane.margin>
+                <Insets bottom="20.0" top="20.0" />
+            </BorderPane.margin>
+        </Label>
+    </top>
+    <center>
+        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab text="Basic Information">
+                    <content>
+                        <GridPane alignment="TOP_LEFT" hgap="15.0" vgap="20.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="NEVER" />
+                                <ColumnConstraints hgrow="ALWAYS" />
+                                <ColumnConstraints hgrow="NEVER" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                        <RowConstraints />
+                            </rowConstraints>
+                            <children>
+                                <Label text="App Folder:" />
+                                <TextField GridPane.columnIndex="1" />
+                                <Button mnemonicParsing="false" text="Browse..." GridPane.columnIndex="2" />
+                                <Label text="JRE Folder:" GridPane.rowIndex="1" />
+                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <Button mnemonicParsing="false" text="Browse..." GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                <AnchorPane GridPane.columnSpan="3" GridPane.rowIndex="2">
+                                    <children>
+                                        <CheckBox layoutY="5.0" mnemonicParsing="false" text="MainJar Mode" />
+                                        <CheckBox layoutX="138.0" layoutY="5.0" mnemonicParsing="false" text="MainClass Mode" />
+                                    </children>
+                                </AnchorPane>
+                                <Label text="Main Jar:" GridPane.rowIndex="3" />
+                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                <Button text="Browse..." GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                <Label text="Main Class:" GridPane.rowIndex="4" />
+                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                <Button text="Browse..." GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                <VBox prefWidth="100.0" GridPane.columnSpan="3" GridPane.rowIndex="5">
+                                    <children>
+                                        <Label text="Classpath:" />
+                                        <TextArea prefHeight="100.0" prefWidth="200.0" wrapText="true">
+                                            <VBox.margin>
+                                                <Insets top="10.0" />
+                                            </VBox.margin>
+                                        </TextArea>
+                                    </children>
+                                </VBox>
+                                <Label text="Executable Name:" GridPane.rowIndex="6" />
+                                <TextField GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+                                <Label text="Output Folder:" GridPane.rowIndex="7" />
+                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                <Button mnemonicParsing="false" text="Browse..." GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                        <CheckBox mnemonicParsing="false" text="Hide Console" GridPane.columnSpan="3" GridPane.rowIndex="8" />
+                            </children>
+                            <padding>
+                                <Insets left="20.0" right="20.0" top="30.0" />
+                            </padding>
+                        </GridPane>
+                    </content>
+                </Tab>
+                <Tab text="Windows Executable Information" />
+            </tabs>
+        </TabPane>
+    </center>
+</BorderPane>
