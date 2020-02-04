@@ -9,12 +9,13 @@ version '1.0.0'
 sourceCompatibility = 1.8
 
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-    implementation "io.vlinx:java-wrapper:1.0.1"
+    implementation "io.vlinx:java-wrapper:1.0.3"
     implementation "io.vlinx:vlinx-logging:1.0.0"
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

@@ -6,14 +6,18 @@ import javafx.scene.Parent
 import javafx.scene.Scene
 import javafx.stage.Stage
 
+lateinit var primaryStage: Stage;
+
 class UIApp : Application() {
-    override fun start(primaryStage: Stage) {
+
+    override fun start(_primaryStage: Stage) {
         val root = FXMLLoader.load<Parent>(javaClass.classLoader.getResource("ui.fxml"))
-        primaryStage.title = "VLINX Java Wrapper"
-        primaryStage.scene = Scene(root)
-        primaryStage.minWidth = 800.0
-        primaryStage.minHeight = 800.0
-        primaryStage.show()
+        primaryStage = _primaryStage
+        _primaryStage.title = APP_TITLE
+        _primaryStage.scene = Scene(root)
+        _primaryStage.minWidth = 1000.0
+        _primaryStage.minHeight = 1000.0
+        _primaryStage.show()
     }
 
     fun Launch(args: Array<String>) {
