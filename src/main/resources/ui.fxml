@@ -4,18 +4,16 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0"
-            prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="io.vlinx.java.wrapper.ui.UIController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.vlinx.java.wrapper.ui.UIController">
     <top>
         <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <items>
-                <Button fx:id="btnStart" onAction="#handleStart" text="Start"/>
-                <Button fx:id="btnGuide" onAction="#handleGuide" text="Guide"/>
-                <Button fx:id="btnAbout" onAction="#handleAbout" text="About"/>
+                <Button fx:id="btnStart" onAction="#handleStart" text="Start" />
+                <Button fx:id="btnGuide" onAction="#handleGuide" text="Guide" />
+                <Button fx:id="btnAbout" onAction="#handleAbout" text="About" />
             </items>
             <padding>
-                <Insets bottom="15" left="10.0" right="10.0" top="15"/>
+                <Insets bottom="15" left="10.0" right="10.0" top="15" />
             </padding>
         </ToolBar>
     </top>
@@ -24,85 +22,73 @@
             <tabs>
                 <Tab fx:id="tabBasicInfo" text="Basic Information">
                     <content>
-                        <GridPane alignment="TOP_LEFT" hgap="15.0" vgap="20.0">
+                        <GridPane alignment="TOP_LEFT" hgap="15.0" vgap="10.0">
                             <columnConstraints>
-                                <ColumnConstraints/>
-                                <ColumnConstraints hgrow="ALWAYS"/>
-                                <ColumnConstraints/>
+                                <ColumnConstraints />
+                                <ColumnConstraints hgrow="ALWAYS" />
+                                <ColumnConstraints />
                             </columnConstraints>
                             <children>
-                                <Label text="* App Folder:"/>
-                                <TextField fx:id="txtAppFolder" GridPane.columnIndex="1"/>
-                                <Button fx:id="btnAppFolder" onAction="#handleSelectAppFolder" text="Browse..."
-                                        GridPane.columnIndex="2"/>
-                                <Label text="Bundled JRE:" GridPane.rowIndex="1"/>
-                                <TextField fx:id="txtJreFolder" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                                <Button fx:id="btnJreFolder" onAction="#handleSelectJreFolder" text="Browse..."
-                                        GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                                <Label text="* App Folder:" />
+                                <TextField fx:id="txtAppFolder" GridPane.columnIndex="1" />
+                                <Button fx:id="btnAppFolder" onAction="#handleSelectAppFolder" text="Browse..." GridPane.columnIndex="2" />
+                                <Label text="Bundled JRE:" GridPane.rowIndex="1" />
+                                <TextField fx:id="txtJreFolder" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <Button fx:id="btnJreFolder" onAction="#handleSelectJreFolder" text="Browse..." GridPane.columnIndex="2" GridPane.rowIndex="1" />
                                 <AnchorPane GridPane.columnSpan="3" GridPane.rowIndex="2">
                                     <children>
-                                        <RadioButton fx:id="btnMainJarMode" layoutY="5.0" onAction="#selectMainJarMode"
-                                                     text="MainJar Mode"/>
-                                        <RadioButton fx:id="btnMainClassMode" layoutX="138.0" layoutY="5.0"
-                                                     onAction="#selectMainClassMode" text="MainClass Mode"/>
+                                        <RadioButton fx:id="btnMainJarMode" layoutY="5.0" onAction="#selectMainJarMode" text="MainJar Mode" />
+                                        <RadioButton fx:id="btnMainClassMode" layoutX="138.0" layoutY="5.0" onAction="#selectMainClassMode" text="MainClass Mode" />
                                     </children>
                                 </AnchorPane>
-                                <Label text="* Main Jar:" GridPane.rowIndex="3"/>
-                                <TextField fx:id="txtMainJar" GridPane.columnIndex="1" GridPane.columnSpan="2"
-                                           GridPane.rowIndex="3"/>
-                                <Label text="* Main Class:" GridPane.rowIndex="4"/>
-                                <TextField fx:id="txtMainClass" disable="true" GridPane.columnIndex="1"
-                                           GridPane.columnSpan="2" GridPane.rowIndex="4"/>
+                                <Label text="* Main Jar:" GridPane.rowIndex="3" />
+                                <TextField fx:id="txtMainJar" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                                <Label text="* Main Class:" GridPane.rowIndex="4" />
+                                <TextField fx:id="txtMainClass" disable="true" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" />
                                 <VBox prefWidth="100.0" GridPane.columnSpan="3" GridPane.rowIndex="5">
                                     <children>
-                                        <Label text="* Classpath (Use ; or : as separator):"/>
-                                        <TextArea fx:id="txtClasspath" disable="true" prefHeight="100.0"
-                                                  prefWidth="200.0" wrapText="true">
+                                        <Label text="* Classpath (Use ; or : as separator):" />
+                                        <TextArea fx:id="txtClasspath" disable="true" prefHeight="60.0" prefWidth="200.0" wrapText="true">
                                             <VBox.margin>
-                                                <Insets top="10.0"/>
+                                                <Insets top="10.0" />
                                             </VBox.margin>
                                         </TextArea>
                                     </children>
                                 </VBox>
                                 <VBox prefWidth="100.0" GridPane.columnSpan="3" GridPane.rowIndex="6">
                                     <children>
-                                        <Label text="JVMOptions (Use space or line separator as separator):"/>
-                                        <TextArea fx:id="txtJvmOptions" prefHeight="100.0" prefWidth="200.0"
-                                                  wrapText="true">
+                                        <Label text="JVMOptions (Use space or line separator as separator):" />
+                                        <TextArea fx:id="txtJvmOptions" prefHeight="60.0" prefWidth="200.0" wrapText="true">
                                             <VBox.margin>
-                                                <Insets top="10.0"/>
+                                                <Insets top="10.0" />
                                             </VBox.margin>
                                         </TextArea>
                                     </children>
                                 </VBox>
-                                <Label text="* Target Platform:" GridPane.rowIndex="7"/>
-                                <ComboBox fx:id="cmbTargetPlatform" minWidth="150.0" GridPane.columnIndex="1"
-                                          GridPane.columnSpan="2" GridPane.rowIndex="7"/>
-                                <Label text="* Executable Name:" GridPane.rowIndex="8"/>
-                                <TextField fx:id="txtExeName" GridPane.columnIndex="1" GridPane.columnSpan="2"
-                                           GridPane.rowIndex="8"/>
-                                <Label text="* Output Folder:" GridPane.rowIndex="9"/>
-                                <TextField fx:id="txtOutputFolder" GridPane.columnIndex="1" GridPane.rowIndex="9"/>
-                                <Button fx:id="btnOutputFolder" onAction="#handleSelectOutputFolder" text="Browse..."
-                                        GridPane.columnIndex="2" GridPane.rowIndex="9"/>
-                                <CheckBox fx:id="ckHideConsole" text="Hide Console" GridPane.columnSpan="3"
-                                          GridPane.rowIndex="10"/>
+                                <Label text="* Target Platform:" GridPane.rowIndex="7" />
+                                <ComboBox fx:id="cmbTargetPlatform" minWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+                                <Label text="* Executable Name:" GridPane.rowIndex="8" />
+                                <TextField fx:id="txtExeName" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="8" />
+                                <Label text="* Output Folder:" GridPane.rowIndex="9" />
+                                <TextField fx:id="txtOutputFolder" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                <Button fx:id="btnOutputFolder" onAction="#handleSelectOutputFolder" text="Browse..." GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                                <CheckBox fx:id="ckHideConsole" text="Hide Console" GridPane.columnSpan="3" GridPane.rowIndex="10" />
                             </children>
                             <padding>
-                                <Insets left="20.0" right="20.0" top="30.0"/>
+                                <Insets left="20.0" right="20.0" top="30.0" />
                             </padding>
                             <rowConstraints>
-                                <RowConstraints/>
-                                <RowConstraints/>
-                                <RowConstraints/>
-                                <RowConstraints/>
-                                <RowConstraints/>
-                                <RowConstraints/>
-                                <RowConstraints/>
-                                <RowConstraints/>
-                                <RowConstraints/>
-                                <RowConstraints/>
-                                <RowConstraints/>
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
                             </rowConstraints>
                         </GridPane>
                     </content>
@@ -111,45 +97,38 @@
                     <content>
                         <GridPane alignment="TOP_LEFT" hgap="15.0" vgap="20.0">
                             <columnConstraints>
-                                <ColumnConstraints/>
-                                <ColumnConstraints hgrow="ALWAYS"/>
-                                <ColumnConstraints/>
+                                <ColumnConstraints />
+                                <ColumnConstraints hgrow="ALWAYS" />
+                                <ColumnConstraints />
                             </columnConstraints>
                             <rowConstraints>
-                                <RowConstraints/>
-                                <RowConstraints/>
-                                <RowConstraints/>
-                                <RowConstraints/>
-                                <RowConstraints/>
-                                <RowConstraints/>
-                                <RowConstraints/>
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
                             </rowConstraints>
                             <children>
-                                <Label text="Icon:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-                                <TextField fx:id="txtIcon" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-                                <Button fx:id="btnIcon" onAction="#handleSelectIcon" text="Browse..."
-                                        GridPane.columnIndex="2" GridPane.rowIndex="0"/>
-                                <Label text="Product Name:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                                <TextField fx:id="txtProductName" GridPane.columnIndex="1" GridPane.columnSpan="2"
-                                           GridPane.rowIndex="1"/>
-                                <Label text="File Version:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-                                <TextField fx:id="txtFileVersion" GridPane.columnIndex="1" GridPane.columnSpan="2"
-                                           GridPane.rowIndex="2"/>
-                                <Label text="File Description:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-                                <TextField fx:id="txtFileDescription" GridPane.columnIndex="1" GridPane.columnSpan="2"
-                                           GridPane.rowIndex="3"/>
-                                <Label text="Product Version:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
-                                <TextField fx:id="txtProductVersion" GridPane.columnIndex="1" GridPane.columnSpan="2"
-                                           GridPane.rowIndex="4"/>
-                                <Label text="Company Name:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
-                                <TextField fx:id="txtCompanyName" GridPane.columnIndex="1" GridPane.columnSpan="2"
-                                           GridPane.rowIndex="5"/>
-                                <Label text="Legal Copyright:" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
-                                <TextField fx:id="txtCopyright" GridPane.columnIndex="1" GridPane.columnSpan="2"
-                                           GridPane.rowIndex="6"/>
+                                <Label text="Icon:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                <TextField fx:id="txtIcon" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                                <Button fx:id="btnIcon" onAction="#handleSelectIcon" text="Browse..." GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                                <Label text="Product Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                <TextField fx:id="txtProductName" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                                <Label text="File Version:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                <TextField fx:id="txtFileVersion" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                                <Label text="File Description:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                                <TextField fx:id="txtFileDescription" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                                <Label text="Product Version:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                                <TextField fx:id="txtProductVersion" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+                                <Label text="Company Name:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                                <TextField fx:id="txtCompanyName" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+                                <Label text="Legal Copyright:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                                <TextField fx:id="txtCopyright" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="6" />
                             </children>
                             <padding>
-                                <Insets left="20.0" right="20.0" top="30.0"/>
+                                <Insets left="20.0" right="20.0" top="30.0" />
                             </padding>
                         </GridPane>
                     </content>
