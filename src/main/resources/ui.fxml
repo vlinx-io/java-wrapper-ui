@@ -95,7 +95,7 @@
                 </Tab>
                 <Tab fx:id="tabExeInfo" text="Windows Executable Information">
                     <content>
-                        <GridPane alignment="TOP_LEFT" hgap="15.0" vgap="20.0">
+                        <GridPane alignment="TOP_LEFT" hgap="15.0" vgap="10.0">
                             <columnConstraints>
                                 <ColumnConstraints />
                                 <ColumnConstraints hgrow="ALWAYS" />
