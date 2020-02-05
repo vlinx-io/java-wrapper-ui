@@ -136,7 +136,7 @@ class UIController : Initializable {
         config.outputFolder = txtOutputFolder.text
         config.isHideConsole = ckHideConsole.isSelected
 
-        val jvmOptions = txtJvmOptions.text.split(" ", System.lineSeparator())
+        val jvmOptions = txtJvmOptions.text.split(" ", "\n")
         val jvmOptionsList = ArrayList<String>()
 
         for (option in jvmOptions) {

@@ -4,13 +4,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.vlinx.java.wrapper.ui.TaskDialogController">
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.vlinx.java.wrapper.ui.TaskDialogController">
 
     <center>
-        <TextArea fx:id="txtConsole" editable="false">
+        <TextArea fx:id="txtConsole" editable="false" wrapText="true">
             <BorderPane.margin>
-                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0"/>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
             </BorderPane.margin>
         </TextArea>
     </center>

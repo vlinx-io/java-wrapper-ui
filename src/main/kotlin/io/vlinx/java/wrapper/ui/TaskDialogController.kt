@@ -1,9 +1,9 @@
 package io.vlinx.java.wrapper.ui
 
 import io.vlinx.communicate.app.IAppMsgListener
+import io.vlinx.communicate.logging.Logger
 import io.vlinx.java.wrapper.Config
 import io.vlinx.java.wrapper.JavaWrapper
-import io.vlinx.logging.Logger
 import javafx.application.Platform
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
@@ -21,14 +21,27 @@ class TaskDialogController : Initializable {
     val listener = IAppMsgListener {
         when (it.command) {
             "debug", "info" -> {
-                txtConsole.appendText(it.description + System.lineSeparator())
+                Platform.runLater {
+                    txtConsole.appendText(it.description + System.lineSeparator())
+                }
             }
             "warn" -> {
-                txtConsole.appendText(it.description + System.lineSeparator())
+                Platform.runLater {
+                    txtConsole.appendText(it.description + System.lineSeparator())
+                }
             }
             "error", "fatal" -> {
-                txtConsole.appendText(it.description + System.lineSeparator())
-                openAlertDialog("Error", "null", it.description, Alert.AlertType.ERROR)
+                Platform.runLater {
+                    txtConsole.appendText(it.description + System.lineSeparator())
+                    openAlertDialog("Error", null, it.description, Alert.AlertType.ERROR)
+                }
+            }
+            "exception" -> {
+                val e = it.getData("exception") as Exception
+                Platform.runLater {
+                    txtConsole.appendText(it.description)
+                    openAlertDialog("Exception", null, e.message!!, Alert.AlertType.ERROR)
+                }
             }
         }
     }
@@ -49,10 +62,7 @@ class TaskDialogController : Initializable {
                 }
 
             } catch (e: Exception) {
-                Logger.ERROR(e)
-                Platform.runLater {
-                    openAlertDialog("Error", null, e.message!!, Alert.AlertType.ERROR)
-                }
+                Logger.ERROR(e, listener)
             }
         }
         thread.isDaemon = true
