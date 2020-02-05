@@ -14,9 +14,9 @@ class UIApp : Application() {
         val root = FXMLLoader.load<Parent>(javaClass.classLoader.getResource("ui.fxml"))
         primaryStage = _primaryStage
         _primaryStage.title = APP_TITLE
-        _primaryStage.scene = Scene(root,600.0,650.0)
-//        _primaryStage.minWidth = 600.0
-//        _primaryStage.minHeight = 600.0
+        _primaryStage.scene = Scene(root)
+        _primaryStage.minWidth = 600.0
+        _primaryStage.minHeight = 650.0
 
         _primaryStage.show()
     }
